@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const prop = defineProps({
+  addToShoppingList: {
+    type: Function,
+  },
+})
+</script>
+
 <template>
   <div class="w-[380px] relative shadow-md my-[50px] mx-auto bg-[#fafafa]">
     <div class="absolute left-0 top-5 text-[13px] font-[700] bg-red-500 text-white py-1 px-2">
@@ -23,8 +31,10 @@
           <small class="text-[80%] font-normal line-through inline-block mr-2">$96.00</small>$230.99
         </div>
         <div class="text-right">
-          <i class="pi pi-heart cursor-pointer hover:text-orange-500 mr-1"></i>
-          <i class="pi pi-shopping-cart cursor-pointer hover:text-orange-500"></i>
+          <i
+            class="pi pi-shopping-cart cursor-pointer hover:text-orange-500"
+            @click="addToShoppingList"
+          ></i>
         </div>
       </div>
     </div>
