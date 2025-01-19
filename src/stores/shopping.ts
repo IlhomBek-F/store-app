@@ -15,7 +15,7 @@ export const useShoppingStore = defineStore('shopping', () => {
 
   const deleteFromBasket = (productId: string) => {
     products.value = products.value.filter((product) => product !== productId)
-    delete products[productId]
+    delete productsHash[productId]
   }
 
   return { products, addToBasket, countShoppingList, deleteFromBasket }

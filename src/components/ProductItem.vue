@@ -7,7 +7,7 @@ const prop = defineProps({
 </script>
 
 <template>
-  <div class="w-[380px] relative shadow-md my-[50px] mx-auto bg-[#fafafa]">
+  <div class="w-[380px] relative shadow-md mb-[50px] mx-auto bg-[#fafafa]">
     <div class="absolute left-0 top-5 text-[13px] font-[700] bg-red-500 text-white py-1 px-2">
       HOT
     </div>

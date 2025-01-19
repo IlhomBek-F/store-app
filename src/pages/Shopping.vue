@@ -10,7 +10,7 @@ const { products } = storeToRefs(store)
 
 <template>
   <h1 class="font-semibold text-[30px] py-4">Shopping list</h1>
-  <Card class="relative" v-for="item in products" :key="item">
+  <Card class="relative mb-3" v-for="item in products" :key="item">
     <template #content>
       <Button
         icon="pi pi-trash"
