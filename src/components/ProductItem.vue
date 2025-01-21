@@ -18,13 +18,13 @@ const prop = defineProps({
       <img class="max-w-full max-h-full" :src="product?.img" alt="product_img" />
     </div>
     <div class="p-4">
-      <span class="product-catagory block text-[12px] font-[700] uppercase text-[#ccc] mb-4"
-        >Women,bag</span
-      >
+      <span class="product-catagory block text-[12px] font-[700] uppercase text-[#ccc] mb-4">{{
+        product.name
+      }}</span>
       <h4
         class="font-[500] hover:text-orange-500 block mb-4 uppercase text-[#363636] transition:0.3s"
       >
-        Women leather bag
+        {{ product.name }}
       </h4>
       <p class="text-[15px] mb-4 text-[#999]">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!
