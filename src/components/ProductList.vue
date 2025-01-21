@@ -2,7 +2,7 @@
 import ProductItem from './ProductItem.vue'
 import Spinner from './Spinner.vue'
 import { useShoppingStore } from '@/stores/shopping'
-import { useProducts } from '@/composables/useProducts'
+import { useProducts } from '@/use/useProducts'
 
 const { addToBasket } = useShoppingStore()
 const { loading, data } = useProducts()
