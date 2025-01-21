@@ -10,17 +10,17 @@ const { products } = storeToRefs(store)
 
 <template>
   <h1 class="font-semibold text-[30px] py-4">Shopping list</h1>
-  <Card class="relative mb-3" v-for="item in products" :key="item">
+  <Card class="relative mb-3" v-for="product in products" :key="product.id">
     <template #content>
       <Button
         icon="pi pi-trash"
         size="small"
         severity="danger"
         class="!absolute top-4 right-3"
-        @click="() => store.deleteFromBasket(item)"
+        @click="() => store.deleteFromBasket(product.id)"
       />
       <div class="flex gap-5">
-        <img class="h-[150px]" src="https://i.imgur.com/xdbHo4E.png" />
+        <img class="h-[150px]" :src="product.img" />
         <section>
           <h1 class="uppercase mb-3">Women leather bag</h1>
           <p class="mb-3">
@@ -29,8 +29,9 @@ const { products } = storeToRefs(store)
             culpa ratione quam perferendis esse, cupiditate neque quas!
           </p>
           <div class="text-4 text-[#fbb72c] font-semibold">
-            <small class="text-[80%] font-normal line-through inline-block mr-2">$96.00</small
-            >$230.99
+            <small class="text-[80%] font-normal line-through inline-block mr-2">$96.00</small>${{
+              product.price
+            }}
           </div>
         </section>
       </div>

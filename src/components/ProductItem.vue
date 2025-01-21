@@ -3,6 +3,9 @@ const prop = defineProps({
   addToShoppingList: {
     type: Function,
   },
+  product: {
+    type: Object,
+  },
 })
 </script>
 
@@ -12,7 +15,7 @@ const prop = defineProps({
       HOT
     </div>
     <div class="flex items-center justify-center h-[300px] p-12 bg-[#f0f0f0]">
-      <img class="max-w-full max-h-full" src="https://i.imgur.com/xdbHo4E.png" alt="" />
+      <img class="max-w-full max-h-full" :src="product?.img" alt="product_img" />
     </div>
     <div class="p-4">
       <span class="product-catagory block text-[12px] font-[700] uppercase text-[#ccc] mb-4"
@@ -28,7 +31,9 @@ const prop = defineProps({
       </p>
       <div class="overflow-hidden border-t-[1px] border-[#eee]">
         <div class="text-4 text-[#fbb72c] font-semibold">
-          <small class="text-[80%] font-normal line-through inline-block mr-2">$96.00</small>$230.99
+          <small class="text-[80%] font-normal line-through inline-block mr-2">$96.00</small>${{
+            product.price
+          }}
         </div>
         <div class="text-right">
           <i

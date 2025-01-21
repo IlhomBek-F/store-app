@@ -1,5 +1,5 @@
 import { createWebHistory, createRouter } from 'vue-router'
-import HomeView from '../pages/Home.vue'
+import HomeView from '@/pages/Home.vue'
 
 const router = createRouter({
   history: createWebHistory('/'),
@@ -18,6 +18,7 @@ const router = createRouter({
       name: 'shopping',
       component: () => import('@/pages/Shopping.vue'),
     },
+    { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
 })
 

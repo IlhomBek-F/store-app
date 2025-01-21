@@ -7,14 +7,14 @@ export const useShoppingStore = defineStore('shopping', () => {
   const countShoppingList = computed(() => products.value.length)
 
   const addToBasket = (product) => {
-    if (!productsHash[product]) {
+    if (!productsHash[product.id]) {
       products.value.push(product)
-      productsHash[product] = product
+      productsHash[product.id] = product
     }
   }
 
-  const deleteFromBasket = (productId: string) => {
-    products.value = products.value.filter((product) => product !== productId)
+  const deleteFromBasket = (productId: number) => {
+    products.value = products.value.filter((product: any) => product.id !== productId)
     delete productsHash[productId]
   }
 
