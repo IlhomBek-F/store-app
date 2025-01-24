@@ -17,7 +17,6 @@ export function useProducts() {
       const docRef = doc(db, 'products', 'jyvzvvrraYT9mTTO3Aqp')
       const res = await getDoc(docRef)
       _data.value = res.data()?.products
-      _loading.value = false
     } catch (err: unknown) {
       if (err instanceof Error) {
         _error.value = err
