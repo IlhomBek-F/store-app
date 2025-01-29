@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Menubar from 'primevue/menubar'
 import Button from 'primevue/button'
-import Badge from 'primevue/badge'
 import OverlayBadge from 'primevue/overlaybadge'
 import { useShoppingStore } from '../stores/shopping'
 

@@ -1,27 +1,24 @@
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { db } from '../../firebase.js'
 import { doc, getDoc } from 'firebase/firestore'
 import type { ProductType } from '@/core/index.js'
 
-const _data = ref<{ products: ProductType[] }>({ products: [] })
-const _error = ref<Error>()
-const _loading = ref(false)
-
-const loading = computed(() => _loading.value)
-const data = computed(() => _data.value)
+const data = ref<{ products: ProductType[] }>({ products: [] })
+const error = ref<Error>()
+const loading = ref(false)
 
 const getProducts = async () => {
-  _loading.value = true
+  loading.value = true
   try {
     const docRef = doc(db, 'products', 'jyvzvvrraYT9mTTO3Aqp')
     const res = await getDoc(docRef)
-    _data.value = res.data()?.products
+    data.value = res.data()?.products
   } catch (err: unknown) {
     if (err instanceof Error) {
-      _error.value = err
+      error.value = err
     }
   } finally {
-    _loading.value = false
+    loading.value = false
   }
 }
 
